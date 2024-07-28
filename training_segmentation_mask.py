@@ -39,8 +39,8 @@ import detectron2.utils.comm as comm
 
 from sklearn.model_selection import train_test_split
 
-DATA_PATH = '/work/cbagchi_umass_edu/TrainDetectron2/TrainDetectron2'
-MODEL_SAVE_DIR = './mar_2024_outputs'
+DATA_PATH = '' ##Add path to images here
+MODEL_SAVE_DIR = '' ##Add path to directory where you want to save the trained model
 
 warnings.filterwarnings("ignore")
 
@@ -185,8 +185,7 @@ def get_whale_dicts(d):
 
 
 def plot_keypoints(df, filename, whale_id, show_img=True):
-    # im = cv2.imread('/home/cbagchi/TrainDetectron2/Australia/2016/images/'+filename)
-    im = cv2.imread(os.path.join(DATA_PATH, 'Australia/2016/images/'+filename))
+    im = cv2.imread(os.path.join(DATA_PATH, filename))
     datapoint = df[(df['filename']==filename) & (df['whale_id']==whale_id)].iloc[0]
     #print(datapoint)
     datapoint= datapoint.replace('',0)
@@ -230,7 +229,7 @@ for i in range(len(df)):
 segmentation_masks={}
 keypoints = {}
 count = 0
-all_segmentation_masks = load_pkl('./data/final_segmentation_masks_28_july_2023_10_percent_increased_distance.pkl')
+all_segmentation_masks = load_pkl('./data/final_segmentation_masks.pkl')
 for i in range(len(df)):
     df_row=df.loc[i]
     segmentation_masks['filename'] = {}

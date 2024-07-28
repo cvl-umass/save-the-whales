@@ -41,8 +41,8 @@ import detectron2.utils.comm as comm
 
 from sklearn.model_selection import train_test_split
 
-DATA_PATH = '/work/cbagchi_umass_edu/TrainDetectron2/TrainDetectron2'
-MODEL_SAVE_DIR = './mar_2024_outputs'
+DATA_PATH = '' ## Add path to image folder here
+MODEL_SAVE_DIR = '' ## Add directory where you want the trained model to be stored
 
 warnings.filterwarnings("ignore")
 
