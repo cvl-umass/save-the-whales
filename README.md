@@ -1,4 +1,4 @@
-# Save the Whales
+# Automated extraction of right whale morphometric data from drone aerial photographs
 
 ## Overview
 
